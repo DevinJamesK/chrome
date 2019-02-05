@@ -1,0 +1,38 @@
+/* Move Find Bar above the page*/
+.browserContainer > findbar {
+  -moz-box-ordinal-group: 0;
+}
+
+/* Hides tab close x until hover */
+.tabbrowser-tab:not(:hover) .tab-close-button{ display:none; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{ display:-moz-box !important; }
+
+/* Hides bookmark bar text */
+.bookmark-item > .toolbarbutton-text  {
+  width: 0;
+}
+
+:root[uidensity="compact"] toolbarbutton.bookmark-item:not(.subviewbutton) {
+	margin: 0px;
+	padding: 2px 2px;
+}
+
+/* Show folder names instead of icon */
+toolbarbutton.bookmark-item[type="menu"] .toolbarbutton-text {
+	width: auto;
+}
+/* Show the folder icon only if the label is blank */
+toolbarbutton.bookmark-item[type="menu"] .toolbarbutton-icon[label]:not([label=""]) {
+	width: 0px !important;
+}
+/* Hide the little bit of padding between the icon and label */
+#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon[label]:not([label=""]) {
+  margin-inline-end: 0px !important;
+}
+
+/* Use Normal top and bottom padding for Compact */
+#PlacesToolbarItems .bookmark-item {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
